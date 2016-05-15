@@ -38,3 +38,10 @@ for i in range(1,len(Time)):
     V = V+ncdf2.variables['v10'][i][:][:]
 
 V=V/len(Time)
+
+#Calculate Bathymetry grid
+Depthmat=[]
+for i in range(0,10801):
+    Depthmat.append(-Depth[0+21601*i:21601+21601*i:60])
+Dtot=Depthmat[0:10801:60]
+Dtot=scipy.delete(Dtot,1,1)
