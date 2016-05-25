@@ -13,7 +13,7 @@ g=9.81
 sigmaB=5.67e-8
 S=1366.
 dm=1.495978707e9
-phi=67.
+phi=60.
 kappa=0.286
 pref=1e5
 
