@@ -17,7 +17,7 @@ def u(y,z):
 	return U*(alpha*z+1.)
 	
 def rho(y,z):
-	return -f0*g/rho0*(-U*y*alpha)
+	return -f0*rho0*(-U*y*alpha)/g+rho0
 	
 #Fields
 Zvec=np.linspace(-1,0,100,endpoint=True)
@@ -45,10 +45,10 @@ Rvec = np.transpose(Rvec)
 Uvec = np.transpose(Uvec)
 Svec = np.transpose(Svec)
 
-
 plt.figure(num=None, figsize=(10,6),dpi=150, facecolor='w', edgecolor='k')
 cs=plt.contourf(Yvec,Zvec,Svec,25)
 ct=plt.contour(Yvec,Zvec,Rvec,10,colors='k')
+plt.clabel(ct, inline=1, fontsize=18)
 cbar=plt.colorbar(cs)
 cbar.ax.tick_params(labelsize=20)
 plt.tick_params(axis='both', which='major', labelsize=20)
