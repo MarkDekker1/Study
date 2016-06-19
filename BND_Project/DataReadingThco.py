@@ -127,7 +127,7 @@ for i in range(0,91):
 Fluxmatrix=[]
 Vmatrix=[]
 Smatrix=[]
-Thniveau=12 #600
+Thniveau=6 #600
 Timeniveau=150
 for j in range(0,180):
     Fluxmean=np.zeros(91)
