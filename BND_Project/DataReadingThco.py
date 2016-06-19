@@ -127,7 +127,7 @@ for i in range(0,91):
 Fluxmatrix=[]
 Vmatrix=[]
 Smatrix=[]
-Thniveau=6 #315K
+Thniveau=12 #600
 Timeniveau=150
 for j in range(0,180):
     Fluxmean=np.zeros(91)
@@ -140,7 +140,7 @@ for j in range(0,180):
     Fluxmatrix.append(Fluxmean)
     Vmatrix.append(Vmean)
     Smatrix.append(Smean)
-    print(i)
+    print(j)
 #%% Eddy means mean HOV moller
 FluxmatrixE=[]
 #VmatrixE=[]
