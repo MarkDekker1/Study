@@ -20,11 +20,12 @@ ax.set_xlabel('Latitude', fontsize=14)
 ax.set_ylabel('Time in days', fontsize=14)
 
 #%%
-
+import numpy as np
+import matplotlib.pyplot as plt
 
 f, (ax1, ax2, ax3) = plt.subplots(1,3,sharey=True,sharex=True, figsize=(10,8))
 
-Colorlevels=np.linspace(,12,12,endpoint=True)
+Colorlevels=np.linspace(0,12,12,endpoint=True)
 
 cs=ax1.contourf(Lat,Timevec,Fluxmatrix,25)
 CS=ax1.contour(Lat,Timevec,Fluxmatrix,levels=[-1000,0,1000],linewidth=3.0,colors='k')
