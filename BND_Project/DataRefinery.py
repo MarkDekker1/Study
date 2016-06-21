@@ -1,5 +1,6 @@
 
 
+#For 2007
 
 #Flux_315K=Fluxmatrix
 #Flux_350K=Fluxmatrix001
@@ -11,4 +12,10 @@ V_600K=Vmatrix000
 
 S_315K=Smatrix
 S_350K=Smatrix001
+S_600K=Smatrix000
+
+
+#%% For 2010:
+Flux_600K=Fluxmatrix000
+V_600K=Vmatrix000
 S_600K=Smatrix000

@@ -14,15 +14,19 @@ import scipy
 #%%Data inladen (verschilt per computer!)
 file = 'C:\Users\Rob\Documents\Localstudy\BoundaryLayers\DataIsentropicMassFluxTh.nc'
 ncdf = Dataset(file, mode='r')
+file2 = 'C:\Users\Rob\Documents\Localstudy\BoundaryLayers\Data2010.nc'
+ncdf2 = Dataset(file, mode='r')
 
 #%%Uithalen variabelen
 Lat = ncdf.variables['latitude'][:]
 Lon = ncdf.variables['longitude'][:]
 Time = ncdf.variables['time'][:]
 Levels = ncdf.variables['level'][:]
+Time2=ncdf2.variables['time'][:]
 #Levels=Levels[::-1]
 
 #%%Calculations
+ncdf=ncdf2
 Tpoint=1
 Ppoint=3
 Pref = 1000.
