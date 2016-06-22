@@ -7,17 +7,17 @@ np.seterr(over='raise')
 mx=100
 mt=500
 dx=1./mx
-dt=1000
+dt=10
 tmax=1.
 L=1.
-r=0.1
-Lambda=0.
+r=0.001
+Lambda=1000.
 Cw0=1./(dt*dx**2)-1./(4.*dx)+r/(2.*dx**2)
 Cc0=-(2./(dt*dx**2)+(Lambda+1)/dt+r/(dx**2)+r/2.)
 Ce0=1./(dt*dx**2)+1./(4.*dx)+r/(2.*dx**2)
 
 def hf(phim1,phi1,phip1):
-    return (phip1-2*phi1+phim1)/(dt*dx**2)+(Lambda+1)*phi1/dt-(phip1-phim1)/(4*dx)-r*((phip1-2*phi1+phim1)/(2*dx**2)-phi1/2.)+1.
+    return (phip1-2*phi1+phim1)/(dt*dx**2)-(Lambda+1)*phi1/dt-(phip1-phim1)/(4*dx)-r*((phip1-2*phi1+phim1)/(2*dx**2)-phi1/2.)+1.
 n=mx
 tt=int(tmax/dt)
 h=np.zeros(n)
@@ -28,7 +28,7 @@ phi=np.zeros(n)
 
 # First set up the figure, the axis, and the plot element we want to animate
 fig = plt.figure()
-ax = plt.axes(xlim=(0, 1), ylim=(-1, 0.2))
+ax = plt.axes(xlim=(0, 1), ylim=(-2, 0.2))
 line, = ax.plot([], [], lw=2)
 xax=np.linspace(0.,1.,mx)
 

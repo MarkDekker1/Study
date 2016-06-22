@@ -12,9 +12,10 @@ from mpl_toolkits.mplot3d import axes3d
 import scipy
 
 #%%Data inladen (verschilt per computer!)
-file = 'C:\Users\Rob\Documents\Localstudy\BoundaryLayers\DataIsentropicMassFluxTh.nc'
-ncdf = Dataset(file, mode='r')
-file2 = 'C:\Users\Rob\Documents\Localstudy\BoundaryLayers\Data2010.nc'
+#file = 'C:\Users\Rob\Documents\Localstudy\BoundaryLayers\DataIsentropicMassFluxTh.nc'
+#ncdf = Dataset(file, mode='r')
+#file2 = 'C:\Users\Rob\Documents\Localstudy\BoundaryLayers\Data2010.nc'
+file2 = '\Data_2010.nc'
 ncdf2 = Dataset(file, mode='r')
 
 #%%Uithalen variabelen
