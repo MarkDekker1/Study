@@ -6,8 +6,8 @@ from matplotlib.ticker import LogFormatter
 import matplotlib.cm as cm
 
 #%% Automatic Running mean important
-A=Flux_mean_350_2007
-A_RM=Flux_mean_350_2007
+A=Flux_mean_600_2010
+A_RM=Flux_mean_600_2010
 
 A_RM[0]=(A[0]+0.5*A[1])/1.5
 A_RM[len(A)-1]=(A[len(A)-1]+0.5*A[len(A)-2])/1.5
@@ -15,24 +15,34 @@ A_RM[len(A)-1]=(A[len(A)-1]+0.5*A[len(A)-2])/1.5
 for i in range(1,len(A)-1):
     A_RM[i]=(0.5*A[i-1]+A[i]+0.5*A[i+1])/2.
 
+#%%
+RefM_315_2010=Flux_mean_315_2010[0:180:2]
+RefM_315_2007=Flux_mean_315_2007[0:180:2]
+RefM_350_2010=Flux_mean_350_2010[0:180:2]
+RefM_350_2007=Flux_mean_350_2007[0:180:2]
+RefM_600_2007=Flux_mean_600_2007[0:180:2]
+RefM_600_2010=Flux_mean_600_2010[0:180:2]
 
+
+SM_600_2007=S_mean_600_2007[0:180:2]
 #%% Automatic plotter
 
-Title='Isentropic Density (eddy)'
-B_1=Flux_eddy315
-B_2=Flux_eddy350
-B_3=np.array(Flux_eddy350)*1
+Title='Isentropic Mass Flux'
+B_1=Flux_mean_315_2010
+B_2=Flux_mean_350_2010
+B_3=np.array(Flux_mean_600_2010)*10
+D_3=SM_600_2007
 Lat=np.linspace(0,90,91,endpoint=True)
 Lat=Lat[::-1]
-Timevec1=np.linspace(1,180,90,endpoint=True)/2
-Timevec2=np.linspace(1,180,90,endpoint=True)/2
-Timevec3=np.linspace(1,180,90,endpoint=True)/2
+Timevec1=np.linspace(1,180,180,endpoint=True)/2
+Timevec2=np.linspace(1,180,180,endpoint=True)/2
+Timevec3=np.linspace(1,180,180,endpoint=True)/2
 
 
 fig, (ax1, ax2, ax3) = plt.subplots(1,3,sharey=True,sharex=True, figsize=(14,8),dpi=500)
 
-b1=-150
-b2=150
+b1=-200
+b2=200
 Colorlevels=np.linspace(b1,b2,100,endpoint=True)
 #Colorlevels=[b1,b1/2,b1/5,b1/10,b1/100,0,b2/100,b2/10,b2/5,b2/2,b2]
 Edges1=np.linspace(b2,100000000,2,endpoint=True)
@@ -58,6 +68,7 @@ ax2.set_xlabel('Latitude', fontsize=20)
 
 cs3=ax3.contourf(Lat,Timevec3,B_3,levels=Colorlevels,cmap=cm.seismic)
 CS=ax3.contour(Lat,Timevec3,B_3,levels=[-1000,0,1000],linewidth=3.0,colors='k')
+#CS=ax3.contour(Lat,Timevec3,D_3,levels=[-1000,1.5,1000],linewidth=3.0,colors='k')
 
 ax3.tick_params(axis='both', which='major',labelsize=20)
 

@@ -61,12 +61,12 @@ for i in range(0,91):
 	eddy600vec1=[]
 	for j in range(0,90):
 		eddy315vec7.append(np.mean(eddy315res07[i][:][j]))
-		eddy350vec7.append(np.mean(eddy315res07[i][:][j]))
-		eddy600vec7.append(np.mean(eddy315res07[i][:][j]))
+		eddy350vec7.append(np.mean(eddy350res07[i][:][j]))
+		eddy600vec7.append(np.mean(eddy600res07[i][:][j]))
   
 		eddy315vec1.append(np.mean(eddy315_2010res[i][:][j]))
 		eddy350vec1.append(np.mean(eddy350_2010res[i][:][j]))
-		eddy600vec1.append(np.mean(eddy350_2010res[i][:][j]))
+		eddy600vec1.append(np.mean(eddy600res10[i][:][j]))
 	Flux_eddy315_10.append(eddy315vec1)
 	Flux_eddy350_10.append(eddy350vec1)
 	Flux_eddy600_10.append(eddy600vec1)
